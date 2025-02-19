@@ -1,0 +1,49 @@
+﻿@page
+@model DosaJob.Pages.WorkRecords.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>WorkRecord</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkRecord.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WorkRecord.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkRecord.StaffName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WorkRecord.StaffName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkRecord.CreatedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WorkRecord.CreatedDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkRecord.Content)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WorkRecord.Content)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkRecord.Category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WorkRecord.Category.CategoryId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.WorkRecord.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

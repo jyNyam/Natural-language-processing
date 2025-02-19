@@ -1,0 +1,58 @@
+﻿@page
+@model DosaJob.Pages.WeeklyReports.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h4>ARASOFT Weekly Report 내용 작성</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="WeeklyReport.Title" class="control-label"></label>
+                <input asp-for="WeeklyReport.Title" class="form-control" />
+                <span asp-validation-for="WeeklyReport.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeeklyReport.ReportDate" class="control-label"></label>
+                <input asp-for="WeeklyReport.ReportDate" class="form-control" />
+                <span asp-validation-for="WeeklyReport.ReportDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeeklyReport.ThisWeek" class="control-label"></label>
+               @* <textarea asp-for="WeeklyReport.ThisWeek" class="form-control" rows="7" cols="50" >@Model.ThisWeek</textarea>*@
+                <textarea name="ThisWeek" rows="7" cols="50" class="form-control">@Model.strThisWeek</textarea>           
+               
+
+                <span asp-validation-for="WeeklyReport.ThisWeek" class="text-danger"></span>
+
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="WeeklyReport.NextWeek" class="control-label"></label>
+                <textarea asp-for="WeeklyReport.NextWeek" class="form-control" rows="7" cols="50" ></textarea>
+                <span asp-validation-for="WeeklyReport.NextWeek" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeeklyReport.Bigo" class="control-label"></label>
+                <textarea asp-for="WeeklyReport.Bigo" class="form-control" rows="7" cols="50" ></textarea>
+                <span asp-validation-for="WeeklyReport.Bigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

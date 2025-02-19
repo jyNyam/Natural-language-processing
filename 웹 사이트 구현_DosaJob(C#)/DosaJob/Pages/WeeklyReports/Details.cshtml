@@ -1,0 +1,63 @@
+﻿@page
+@model DosaJob.Pages.WeeklyReports.DetailsModel
+
+@{
+    ViewData["Title"] = "개발연구소";
+}
+
+<div>
+    <h4>ARASOFT 개발연구소 Weekly Report</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeeklyReport.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeeklyReport.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeeklyReport.ReportDate)
+        </dt>
+        <dd class="col-sm-10">
+            <b>@Html.DisplayFor(model => model.WeeklyReport.ReportDate)</b>
+        </dd>
+       
+    </dl>
+</div>
+
+<table border="0" width="100%">
+    <tr>
+        <td>
+            <div class="form-group">
+                <label asp-for="WeeklyReport.ThisWeek" class="control-label"></label>
+                <textarea asp-for="WeeklyReport.ThisWeek" class="form-control" rows="15" cols="50"></textarea>
+                <span asp-validation-for="WeeklyReport.ThisWeek" class="text-danger"></span>
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label asp-for="WeeklyReport.NextWeek" class="control-label"></label>
+                <textarea asp-for="WeeklyReport.NextWeek" class="form-control" rows="15" cols="50" ></textarea>
+                <span asp-validation-for="WeeklyReport.NextWeek" class="text-danger"></span>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="form-group">
+            <label asp-for="WeeklyReport.Bigo" class="control-label"></label>
+            <textarea asp-for="WeeklyReport.Bigo" class="form-control" rows="7" cols="50"></</textarea>
+            <span asp-validation-for="WeeklyReport.Bigo" class="text-danger"></span>
+        </div>
+        </td>
+    </tr>
+</table>
+
+
+
+      
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.WeeklyReport.WeeklyReportID">Edit</a> |
+    <a asp-page="./Index">List</a>
+</div>

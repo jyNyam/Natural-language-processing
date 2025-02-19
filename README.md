@@ -1,6 +1,9 @@
+<<<<<<< Updated upstream
 # portpolios
 
 
+=======
+>>>>>>> Stashed changes
 # (비상업적 연구 목적으로만 사용 가능)
 
 # 방언 → 표준어 변환 모델 (Dialect-to-Standard Conversion)
@@ -19,4 +22,8 @@
 ## 실행 방법
 1. 필요한 라이브러리 설치
    ```bash
+<<<<<<< Updated upstream
    pip install -r requirements.txt
+=======
+   pip install -r requirements.txt
+>>>>>>> Stashed changes

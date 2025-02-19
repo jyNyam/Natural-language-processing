@@ -1,0 +1,85 @@
+﻿@page
+@model DosaJob.Pages.WeeklyReports.IndexModel
+
+@{
+    ViewData["Title"] = "아라소프트 개발연구소 주간보고";
+}
+
+<h1>아라소프트 개발연구소 주간보고</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"> 
+                @Html.DisplayNameFor(model => model.WeeklyReports[0].Title)
+                </a>
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                @Html.DisplayNameFor(model => model.WeeklyReports[0].ReportDate)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeeklyReports[0].ThisWeek)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeeklyReports[0].NextWeek)
+            </th>
+            <th>
+                 
+                @Html.DisplayNameFor(model => model.WeeklyReports[0].Bigo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.WeeklyReports) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReportDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThisWeek)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NextWeek)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bigo)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.WeeklyReportID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.WeeklyReportID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.WeeklyReportID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.WeeklyReports.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.WeeklyReports.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.WeeklyReports.PageIndex - 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.WeeklyReports.PageIndex + 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @nextDisabled">
+    Next
+</a>
