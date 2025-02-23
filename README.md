@@ -1,8 +1,8 @@
 # 한국어 방언-표준어 변환 모델
 
 ## Description
-이 프로젝트는 한국어 방언을 표준어로 변환하는 Seq2Seq 모델을 구현합니다. Attention Mechanism을 포함하여 보다 정확한 변환을 목표로 합니다.
-본 프로젝트는 자연어 처리(NLP) 연구 및 인공지능 학습을 위한 실험적 목적을 갖습니다. 또한, `Korpora` 라이브러리를 활용하여 추가적인 데이터 증강이 가능합니다.
+이 프로젝트는 한국어 방언을 표준어로 변환하는 Seq2Seq 모델을 구현합니다. Attention Mechanism을 포함하여 보다 정확한 변환을 목표로 합니다.  
+본 프로젝트는 자연어 처리(NLP) 연구 및 인공지능 학습을 위한 **실험적 목적**을 갖습니다. 또한, `Korpora` 라이브러리를 활용하여 추가적인 데이터 증강이 가능합니다.
 
 ## Getting Started
 
@@ -64,10 +64,9 @@ pip list
 ```
 * 데이터셋이 제대로 로드되지 않는다면, `create_dataset.py`의 파일 경로를 확인하세요.
 
-
 ## Authors
 작성자: 허진영  
-GitHub: https://github.com/jyNyam
+GitHub: [jyNyam](https://github.com/jyNyam)
 
 ## Version History
 * 0.2
@@ -76,20 +75,18 @@ GitHub: https://github.com/jyNyam
 * 0.1
     * 초기 릴리스
 
-
 ## License
-이 프로젝트는 **비상업적 용도로만 사용이 허가된 Custom Non-Commercial License**를 따릅니다.  
+이 프로젝트는 **비상업적 용도로만 사용 가능**한 **Custom Non-Commercial License**를 따릅니다.  
 즉, 본 소프트웨어는 **비영리적 목적**으로만 사용, 수정, 배포할 수 있습니다.  
 상업적 용도로 사용하려면 별도의 허가가 필요합니다.  
 
-자세한 사항은 [LICENSE.md](LICENSE.md) 파일을 참조하세요.  
+자세한 사항은 [LICENSE](./LICENSE) 파일을 참조하세요.  
 
 For commercial licensing inquiries, please contact: **[jyardent@gmail.com]**.
-
 
 ## Acknowledgments
 본 프로젝트는 아래의 자료에서 영감을 받았습니다.
 * [KoNLPy: 파이썬 한국어 NLP](https://konlpy.org/ko/latest/)
 * [Korpora: Korean Corpora Archives](https://ko-nlp.github.io/Korpora/)
 * etc
-
+```
