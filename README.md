@@ -81,5 +81,7 @@ GitHub: https://github.com/jyNyam
 
 ## Acknowledgments
 본 프로젝트는 아래의 자료에서 영감을 받았습니다.
-* 정리 중
+* [KoNLPy: 파이썬 한국어 NLP](https://konlpy.org/ko/latest/)
+* [Korpora: Korean Corpora Archives](https://ko-nlp.github.io/Korpora/)
+* etc
 
