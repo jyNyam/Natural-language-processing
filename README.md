@@ -1,62 +1,73 @@
-# Project Title
-
-Simple overview of use/purpose.
+# 한국어 방언-표준어 변환 모델
 
 ## Description
-
-An in-depth paragraph about your project and overview of use.
+이 프로젝트는 한국어 방언을 표준어로 변환하는 Seq2Seq 모델을 구현합니다. Attention Mechanism을 포함하여 보다 정확한 변환을 목표로 합니다.
+본 프로젝트는 자연어 처리(NLP) 연구 및 인공지능 학습을 위한 실험적 목적을 갖습니다.
 
 ## Getting Started
 
 ### Dependencies
+* Python 3.8 이상
+* TensorFlow
+* scikit-learn
+* NumPy
+* pandas
+* KoNLPy
+* NLTK
+* Korpora
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+설치 방법:
+```bash
+pip install tensorflow scikit-learn numpy pandas konlpy nltk Korpora
+```
 
 ### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+1. 본 저장소를 클론합니다.
+```bash
+git clone https://github.com/your-repo/dialect-to-standard.git
+cd dialect-to-standard
+```
+2. 필요한 라이브러리를 설치합니다.
+```bash
+pip install -r requirements.txt
+```
 
 ### Executing program
-
-* How to run the program
-* Step-by-step bullets
+1. 데이터셋을 생성합니다.
+```python
+python create_dataset.py
 ```
-code blocks for commands
+2. 모델을 학습합니다.
+```python
+python train_model.py
+```
+3. 변환 테스트를 실행합니다.
+```python
+python test_model.py
 ```
 
 ## Help
-
-Any advise for common problems or issues.
+* 실행 중 오류가 발생할 경우 라이브러리 버전을 확인하세요.
+```bash
+pip list
 ```
-command to run if program contains helper info
-```
+* 데이터셋이 제대로 로드되지 않는다면, `create_dataset.py`의 파일 경로를 확인하세요.
 
 ## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+작성자: 허진영  
+GitHub: https://github.com/jyNyam
 
 ## Version History
-
 * 0.2
-    * Various bug fixes and optimizations
+    * 모델 최적화 및 버그 수정
     * See [commit change]() or See [release history]()
 * 0.1
-    * Initial Release
+    * 초기 릴리스
 
 ## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+이 프로젝트는 MIT 라이선스를 따릅니다. 자세한 사항은 LICENSE.md 파일을 참조하세요.
 
 ## Acknowledgments
+본 프로젝트는 아래의 자료에서 영감을 받았습니다.
+* 정리 중
 
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
