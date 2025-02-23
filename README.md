@@ -1,23 +1,62 @@
+# Project Title
 
-# portpolios
+Simple overview of use/purpose.
 
->>>>>>> Stashed changes
-# (비상업적 연구 목적으로만 사용 가능)
+## Description
 
-# 방언 → 표준어 변환 모델 (Dialect-to-Standard Conversion)
+An in-depth paragraph about your project and overview of use.
 
-## 프로젝트 개요
-이 프로젝트는 Seq2Seq 모델을 이용하여 한국어 방언을 표준어로 변환하는 모델을 개발하는 것입니다.
+## Getting Started
 
-## 기술 스택
-- Python, TensorFlow, Keras
-- NLP (KoNLPy, Okt 형태소 분석기)
-- LSTM 기반 Seq2Seq 모델
+### Dependencies
 
-## 데이터셋
-- 수집한 방언-표준어 데이터 (dialect_to_standard.csv)
+* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
+* ex. Windows 10
 
-## 실행 방법
-1. 필요한 라이브러리 설치
-   ```bash
-   pip install -r requirements.txt
+### Installing
+
+* How/where to download your program
+* Any modifications needed to be made to files/folders
+
+### Executing program
+
+* How to run the program
+* Step-by-step bullets
+```
+code blocks for commands
+```
+
+## Help
+
+Any advise for common problems or issues.
+```
+command to run if program contains helper info
+```
+
+## Authors
+
+Contributors names and contact info
+
+ex. Dominique Pizzie  
+ex. [@DomPizzie](https://twitter.com/dompizzie)
+
+## Version History
+
+* 0.2
+    * Various bug fixes and optimizations
+    * See [commit change]() or See [release history]()
+* 0.1
+    * Initial Release
+
+## License
+
+This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+
+## Acknowledgments
+
+Inspiration, code snippets, etc.
+* [awesome-readme](https://github.com/matiassingers/awesome-readme)
+* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+* [dbader](https://github.com/dbader/readme-template)
+* [zenorocha](https://gist.github.com/zenorocha/4526327)
+* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
