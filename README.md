@@ -76,8 +76,16 @@ GitHub: https://github.com/jyNyam
 * 0.1
     * 초기 릴리스
 
+
 ## License
-이 프로젝트는 MIT 라이선스를 따릅니다. 자세한 사항은 LICENSE.md 파일을 참조하세요.
+이 프로젝트는 **비상업적 용도로만 사용이 허가된 Custom Non-Commercial License**를 따릅니다.  
+즉, 본 소프트웨어는 **비영리적 목적**으로만 사용, 수정, 배포할 수 있습니다.  
+상업적 용도로 사용하려면 별도의 허가가 필요합니다.  
+
+자세한 사항은 [LICENSE.md](LICENSE.md) 파일을 참조하세요.  
+
+For commercial licensing inquiries, please contact: **[jyardent@gmail.com]**.
+
 
 ## Acknowledgments
 본 프로젝트는 아래의 자료에서 영감을 받았습니다.
