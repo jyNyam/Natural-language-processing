@@ -4,6 +4,21 @@
 이 프로젝트는 한국어 방언을 표준어로 변환하는 Seq2Seq 모델을 구현합니다. Attention Mechanism을 포함하여 보다 정확한 변환을 목표로 합니다.  
 본 프로젝트는 자연어 처리(NLP) 연구 및 인공지능 학습을 위한 **실험적 목적**을 갖습니다. 또한, `Korpora` 라이브러리를 활용하여 추가적인 데이터 증강이 가능합니다.
 
+
+## 추후 보안 및 수정 방향
+1. 데이터 활용을 구체화
+Korpora.load("modu_web")을 사용하지만, 방언-표준어 쌍 데이터로 가공하는 과정이 부족해 보임. 데이터 정제 과정(불필요한 문자 제거, 구어체 정규화 등) 추가할 예정.
+
+2. 모델 아키텍처 업그레이드
+LSTM 기반 Seq2Seq 대신 Transformer 또는 T5 (Text-to-Text Transfer Transformer) 적용하여 BERT 기반 모델(KoBART, KoGPT, BERT2BERT)과 비교 분석이 필요함.
+
+3. 성능 평가 지표 다양화
+BLEU 외에도 Character Error Rate (CER), Translation Edit Rate (TER), Perplexity 등 다양한 평가가 필요함.
+
+4. 모델 학습 & 결과 분석 추가
+방언 종류별(지역에 따른 방언) 성능을 비교하여야 함.
+학습 과정 시각화 (Loss 그래프, Attention weight 시각화) 자료를 제시하도록 해야 함.
+
 ## Getting Started
 
 ### Dependencies
@@ -90,3 +105,5 @@ For commercial licensing inquiries, please contact: **[jyardent@gmail.com]**.
 * [Korpora: Korean Corpora Archives](https://ko-nlp.github.io/Korpora/)
 * etc
 ```
+
+
