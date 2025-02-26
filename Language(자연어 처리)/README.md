@@ -5,9 +5,9 @@
 본 프로젝트는 자연어 처리(NLP) 연구 및 인공지능 학습을 위한 **실험적 목적**을 갖습니다. 또한, `Korpora` 라이브러리를 활용하여 추가적인 데이터 증강이 가능합니다.
 
 ## Getting Started
-[1차] language.py 에서 아래와 같은 수정 내역을 통해 language_1.py 로 재수정함.
+[1차] language.py 에서 아래와 같은 수정 내역을 통해 language_1st.py 로 재수정함.
 
-[2차] language_1.py 에서 아래와 같은 수정 내역을 통해 language_2.py 로 재수정함.
+[2차] language_1st.py 에서 아래와 같은 수정 내역을 통해 language_2nd.py 로 재수정함.
 
 
 ## [1차 수정 내역]
