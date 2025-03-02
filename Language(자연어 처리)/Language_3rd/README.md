@@ -9,6 +9,7 @@
 - `tensorflow` 대신 `transformers`, `torch`를 활용하여 **사전 학습된 BERT 모델**을 사용
 
 - 주피터 노트북 설치한 후 실행
+```bash
 pip install notebook
 jupyter notebook
 
