@@ -19,13 +19,12 @@ jupyter notebook
 - `padding='post'` 방식에서 **BERT의 패딩 방식(`padding="max_length"`)으로 변경**
 
 ### 3. 모델 구조 변경
-| 기존 LSTM Seq2Seq 모델 | BERT 기반 Encoder-Decoder 모델 |
-|---------------------|---------------------------|
-| Embedding + LSTM Encoder | BERT Encoder 사용 |
-| LSTM Decoder | BERT Decoder 사용 |
-| 단어 임베딩 필요 | 사전 학습된 BERT 토크나이저 사용 |
-| `sparse_categorical_crossentropy` 사용 | `CrossEntropyLoss` 사용 |
-| `pad_sequences`로 패딩 적용 | `BertTokenizer`의 `max_length` 적용 |
+- 기존 LSTM Seq2Seq 모델에서 **BERT 기반 Encoder-Decoder 모델**
+- BERT Encoder 사용 
+- BERT Decoder 사용 
+- 사전 학습된 BERT 토크나이저 사용 |
+- `sparse_categorical_crossentropy` 를 `CrossEntropyLoss` 로 수정
+- `pad_sequences`로 패딩 적용을 `BertTokenizer`의 `max_length` 로 수정
 
 ### 4. 학습 방식 변경
 - `Adam` 옵티마이저 → **`AdamW`**로 변경 (BERT 최적화에 적합)
