@@ -1,0 +1,7 @@
+** 필요한 패키지 목록 **
+
+1. torch
+2. transformers
+3. Korpora
+4. nltk
+5. scikit-learn
