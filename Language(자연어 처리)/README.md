@@ -11,20 +11,21 @@
 
 [3차] language_2nd.py 에서 아래와 같은 수정 내역을 통해 language_3rd 폴더로 재수정함.
 
-## [1차 수정 내역]
-# Embedding Layer 적용
+
+# [1차 수정 내역]
+## Embedding Layer 적용
 기존 Dense(embedding_dim, activation='relu') → Embedding()으로 수정
 Tokenizer로 만든 인덱스를 Embedding()을 통해 학습
 
-# 입력 데이터 정제화
+## 입력 데이터 정제화
 형태소 분석(Okt())을 적용하여 데이터 정제 후 Tokenizer에 입력
 pad_sequences에서 maxlen을 자동으로 계산
 
-# 디코딩 함수 구현 (decode_sequence())
+## 디코딩 함수 구현 (decode_sequence())
 입력 문장을 Tokenizer를 통해 변환 후 모델을 통해 예측
 argmax()를 사용해 최적 단어 선택
 
-# BLEU 평가 수정
+## BLEU 평가 수정
 candidate는 리스트 형태([['밥', '먹었니', '?']])로 변경
 
 ## 기대효과
@@ -34,14 +35,14 @@ candidate는 리스트 형태([['밥', '먹었니', '?']])로 변경
 
 
 
-## [2차 수정 내역]
-# Korpora.load("modu_web")으로 데이터를 불러온 형태
+# [2차 수정 내역]
+## Korpora.load("modu_web")으로 데이터를 불러온 형태
 from Korpora import Korpora
 
 corpus = Korpora.load("modu_web")
 print(corpus)
 
-# 데이터 불러오기 수정
+## 데이터 불러오기 수정
 [기존 코드]
 
 df = pd.read_csv('dialect_to_standard.csv')
@@ -61,7 +62,7 @@ standard_sentences = [pair[1] for pair in corpus.pairs]  # target(표준어)
 /(이유)/ Korpora.load("modu_web")은 (source, target) 쌍으로 제공되므로 .pairs 속성을 활용해야 합니다.
 기존의 CSV 기반 데이터 로딩이 필요 없으며, 직접 pairs에서 데이터를 가져오도록 수정합니다.
 
-# 데이터 전처리 부분 수정
+## 데이터 전처리 부분 수정
 [기존 코드]
 
 dialect_sentences = tokenize_korean(df['방언'].values)
@@ -77,7 +78,7 @@ standard_sentences = tokenize_korean(standard_sentences)
 dialect_sentences와 standard_sentences는 리스트 형태이므로 바로 tokenize_korean()에 전달하게 함으로 기존의 df['방언'].values처럼 pandas를 사용할 필요가 없습니다.
 
 
-# 토큰화 및 패딩 조정
+## 토큰화 및 패딩 조정
 [기존 코드]
 
 tokenizer.fit_on_texts(dialect_sentences + standard_sentences)
@@ -108,7 +109,7 @@ standard_padded = pad_sequences(standard_seq, maxlen=max_len, padding='post')
 MODU Web 데이터는 약 20만 개의 문장쌍으로 데이터가 크기 때문에, 학습 속도와 메모리 문제를 고려하여 일부 샘플만 사용할 수 있도록 num_samples = 50000을 설정하였습니다. max_len을 임의로 30으로 설정하여 긴 문장은 적절히 설정값에 따라 자릅니다.
 
 
-# 모델 학습 데이터 수정
+## 모델 학습 데이터 수정
 [기존 코드]
 
 model.fit([dialect_padded, standard_padded[:, :-1]], 
@@ -130,7 +131,7 @@ model.fit([dialect_padded, standard_padded[:, :-1]],
 데이터가 많으므로 훈련 데이터를 50 epochs로 학습하면 과적합 및 학습 시간이 오래 걸릴 수 있습니다. 따라서 배치 크기를 64로 늘려서 더 빠르게 학습하도록 조정했습니다. validation_split=0.1로 설정하여 10%를 검증 데이터로 사용합니다.
 
 
-# 테스트 및 예측 함수 적용 수정
+## 테스트 및 예측 함수 적용 수정
 [기존 코드]
 
 test_sentence = "밥 묵었나?"
@@ -149,11 +150,11 @@ for sentence in test_sentences:
 
 
 
-## [3차 수정 내역]
+# [3차 수정 내역]
 ** Languagu.3rd 참고 **
 
 
-## 결론
+# 결론
 1. Korpora.load("modu_web")을 사용하면 기존 CSV 파일을 직접 다룰 필요 없이 더 방대한 데이터로 학습할 수 있습니다. 하지만 데이터 크기가 크므로, 적절한 샘플링 및 학습 속도 최적화를 할 예정입니다.
 2. 기존 코드에서 데이터 로딩, 전처리, 학습 부분을 조금씩 수정 및 보안을 할 예정입니다.
 
