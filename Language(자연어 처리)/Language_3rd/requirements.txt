@@ -1,7 +1,7 @@
-** 필요한 패키지 목록 **
+** 필요한 라이브러리와 모듈 **
 
-1. torch
-2. transformers
-3. Korpora
-4. nltk
+1. torch: 파이토치를 사용하여 딥러닝 모델을 구현함.
+2. transformers: Hugging Face의 Transformers 라이브러리로 BERT 기반 모델을 호출함.
+3. Korpora: 한국어 말뭉치를 불러오기 위한 라이브러리임.
+4. nltk: Natural Language Toolkit 패키지의 줄임말로, 자연어 처리 및 문서 분석용 패키지임.
 5. scikit-learn
