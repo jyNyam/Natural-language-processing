@@ -9,6 +9,7 @@
 
 [2차] language_1st.py 에서 아래와 같은 수정 내역을 통해 language_2nd.py 로 재수정함.
 
+[3차] language_2nd.py 에서 아래와 같은 수정 내역을 통해 language_3rd 폴더로 재수정함.
 
 ## [1차 수정 내역]
 # Embedding Layer 적용
@@ -145,6 +146,11 @@ for sentence in test_sentences:
 
 /(이유)/
 다양한 입력 문장에 대해 변환 결과를 확인할 수 있도록 여러 개의 테스트 문장을 추가했습니다.
+
+
+
+## [3차 수정 내역]
+** Languagu.3rd 참고 **
 
 
 ## 결론
