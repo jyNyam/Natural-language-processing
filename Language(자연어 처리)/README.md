@@ -42,11 +42,13 @@ print(corpus)
 
 # 데이터 불러오기 수정
 [기존 코드]
+
 df = pd.read_csv('dialect_to_standard.csv')
 dialect_sentences = df['방언'].values
 standard_sentences = df['표준어'].values
 
 [수정 코드] # 방언과 표준어 데이터 분리
+
 from Korpora import Korpora
 
 corpus = Korpora.load("modu_web")
@@ -59,10 +61,12 @@ standard_sentences = [pair[1] for pair in corpus.pairs]  # target(표준어)
 
 # 데이터 전처리 부분 수정
 [기존 코드]
+
 dialect_sentences = tokenize_korean(df['방언'].values)
 standard_sentences = tokenize_korean(df['표준어'].values)
 
 [수정 코드]
+
 dialect_sentences = tokenize_korean(dialect_sentences)
 standard_sentences = tokenize_korean(standard_sentences)
 
@@ -73,6 +77,7 @@ dialect_sentences와 standard_sentences는 리스트 형태이므로 바로 toke
 
 # 토큰화 및 패딩 조정
 [기존 코드]
+
 tokenizer.fit_on_texts(dialect_sentences + standard_sentences)
 dialect_seq = tokenizer.texts_to_sequences(dialect_sentences)
 standard_seq = tokenizer.texts_to_sequences(standard_sentences)
@@ -82,6 +87,7 @@ dialect_padded = pad_sequences(dialect_seq, maxlen=max_len, padding='post')
 standard_padded = pad_sequences(standard_seq, maxlen=max_len, padding='post')
 
 [수정 코드] # 데이터가 방대하므로 일부 샘플(예: 50,000개)만 사용 가능
+
 num_samples = 50000  
 dialect_sentences = dialect_sentences[:num_samples]
 standard_sentences = standard_sentences[:num_samples]
@@ -102,6 +108,7 @@ MODU Web 데이터는 약 20만 개의 문장쌍으로 데이터가 크기 때�
 
 # 모델 학습 데이터 수정
 [기존 코드]
+
 model.fit([dialect_padded, standard_padded[:, :-1]], 
           np.expand_dims(standard_padded[:, 1:], -1),
           epochs=50,
@@ -109,6 +116,7 @@ model.fit([dialect_padded, standard_padded[:, :-1]],
           validation_split=0.2)
 
 [수정 코드]
+
 model.fit([dialect_padded, standard_padded[:, :-1]], 
           np.expand_dims(standard_padded[:, 1:], -1),
           epochs=10,  # 데이터가 많으므로 우선 10 epoch만 학습
@@ -122,10 +130,12 @@ model.fit([dialect_padded, standard_padded[:, :-1]],
 
 # 테스트 및 예측 함수 적용 수정
 [기존 코드]
+
 test_sentence = "밥 묵었나?"
 print("변환 결과:", decode_sequence(test_sentence))
 
 [수정 코드]
+
 test_sentences = ["밥 묵었나?", "어디 가노?", "뭐하노?", "그 사람 안 왔어?"]
 
 for sentence in test_sentences:
