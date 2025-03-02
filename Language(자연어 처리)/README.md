@@ -57,7 +57,8 @@ dialect_sentences = [pair[0] for pair in corpus.pairs]  # source(방언)
 standard_sentences = [pair[1] for pair in corpus.pairs]  # target(표준어)
 
 
-/(이유)/ Korpora.load("modu_web")은 (source, target) 쌍으로 제공되므로 .pairs 속성을 활용해야 합니다. 기존의 CSV 기반 데이터 로딩이 필요 없으며, 직접 pairs에서 데이터를 가져오도록 수정합니다.
+/(이유)/ Korpora.load("modu_web")은 (source, target) 쌍으로 제공되므로 .pairs 속성을 활용해야 합니다.
+기존의 CSV 기반 데이터 로딩이 필요 없으며, 직접 pairs에서 데이터를 가져오도록 수정합니다.
 
 # 데이터 전처리 부분 수정
 [기존 코드]
