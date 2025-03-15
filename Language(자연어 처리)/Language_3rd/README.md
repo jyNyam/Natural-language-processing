@@ -81,4 +81,8 @@ print(f"BLEU Score: {bleu_score:.4f}")
 
 
 ## 2025.03.02 1차 오류내역
-- 
+- ValueError: Not found corpus files. Check root_dir_or_paths 오류는 modu_web 코퍼스가 로컬에 다운로드되지 않았거나, Korpora가 해당 데이터를 찾지 못할 때 발생. 
+- 해결책: modu_web Korpora download
+
+
+## 2025.03.13 2차 오류 내역
