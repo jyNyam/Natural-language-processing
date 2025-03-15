@@ -8,6 +8,9 @@
 - 기존 LSTM 기반 Seq2Seq 모델을 **BERT 기반 Encoder-Decoder 모델**로 변경
 - `tensorflow` 대신 `transformers`, `torch`를 활용하여 **사전 학습된 BERT 모델**을 사용
 
+- BERT(Bidirectional Encoder Representation from Transforformer: 양방향 인코더로 표현하는 변환기): 사전에 학습된 Bert 모델을 단 하나의 레이어로 미세 조정하여 언어 추론과 같은 광범위한 작업을 위한 최신 모델을 만들 수 있으며, 특정 아키텍처를 수정하지 않아도 다양한 NLP에 쉽게 적응할 수 있는 성능이 우수한 모델이다.
+
+
 - 주피터 노트북 설치한 후 실행
 ```bash
 pip install notebook
