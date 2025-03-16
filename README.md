@@ -345,7 +345,7 @@ For commercial licensing inquiries, please contact: **[jyardent@gmail.com]**.
 * [Korpora: Korean Corpora Archives](https://ko-nlp.github.io/Korpora/)
 * [Hugging Face Transformers](https://huggingface.co/transformers/)
 * [PyTorch 공식 문서](https://pytorch.org/)
-* [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding]  (https://arxiv.org/abs/1810.04805?source=post_page)
+* BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (https://arxiv.org/abs/1810.04805?source=post_page)
 * etc
 ```
 
